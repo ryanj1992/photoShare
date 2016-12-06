@@ -1,0 +1,27 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
+.navbar-brand {
+    transform: translateX(-3%);
+    left: 3%;
+    position: absolute;
+}
+
+.wrapText{
+    word-wrap: break-word;
+    background-color: #c7ddef;
+    border-radius: 10px;
+}
