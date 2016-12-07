@@ -137,6 +137,7 @@ if (isset($_SESSION['userSession']) && $id == $_SESSION['userSession'] && $_SESS
         while ($row = mysqli_fetch_assoc($result)) {
             $i++;
             echo "<div class = 'container' <br> <br>";
+            echo "<h3>£".$row["price"]. "</h3>";
             echo "<a class='fancybox' rel='gallery1' href=" . $row["imageURL"] . "><img src=" . $row["imageURL"] . " height ='300' width ='300' align='left'></a>";
 
             // selects all comments from a specific photo
@@ -249,6 +250,7 @@ if (isset($_SESSION['userSession']) && $id == $_SESSION['userSession'] && $_SESS
             while ($row = mysqli_fetch_assoc($result)) {
                 $i++;
                 echo "<div class = 'container' <br> <br>";
+                echo "<h3>£".$row["price"]. "</h3>";
                 echo "<a class='fancybox' rel='gallery1' href=" . $row["imageURL"] . "><img src=" . $row["imageURL"] . " height ='300' width ='300' align='left'></a>";
 
 
@@ -363,7 +365,9 @@ if (isset($_SESSION['userSession']) && $id == $_SESSION['userSession'] && $_SESS
                 echo "<div class = 'container' <br> <br>";
                 echo "<form action = 'deletePhoto.php?photoId=" . $row['photoId'] . "'name='delete' method ='post'>
                 <input type='submit' class='btn btn-danger btn-sm' name='delete' value='Delete Photo'></form></p>";
+                echo "<h3>£".$row["price"]. "</h3>";
                 echo "<a class='fancybox' rel='gallery1' href=" . $row["imageURL"] . "><img src=" . $row["imageURL"] . " height ='300' width ='300' align='left'></a>";
+
 
                 $sql2 = "SELECT c.comment, c.comment_id, t.username, c.date FROM comments c, tbl_users t WHERE t.user_id = c.user_id AND photoId= " . $row['photoId'] . " ";
                 $result2 = $DBcon->query($sql2);
